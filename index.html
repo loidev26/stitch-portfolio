@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DevPortfolio | Full Stack Developer</title>
+<meta content="Professional developer portfolio showcasing technical expertise, featured projects, and academic journey." name="description"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e1e3e4",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#f8f9fa",
+                    "inverse-surface": "#2e3132",
+                    "on-primary-fixed": "#002110",
+                    "on-tertiary-fixed-variant": "#00419e",
+                    "tertiary-container": "#0a6dfc",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#77da9f",
+                    "on-secondary-fixed-variant": "#43474c",
+                    "primary-container": "#198754",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#d9dadb",
+                    "text-primary": "#212529",
+                    "on-tertiary-container": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-dark": "#212529",
+                    "tertiary-fixed": "#dae2ff",
+                    "on-surface-variant": "#3e4941",
+                    "link-blue": "#0D6EFD",
+                    "surface-container-high": "#e7e8e9",
+                    "secondary-fixed-dim": "#c3c7cc",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#ffffff",
+                    "secondary-fixed": "#e0e3e8",
+                    "outline-variant": "#bdcabe",
+                    "secondary-container": "#dde0e5",
+                    "on-surface": "#191c1d",
+                    "surface-container-low": "#f3f4f5",
+                    "background-subtle": "#F8F9FA",
+                    "inverse-on-surface": "#f0f1f2",
+                    "on-tertiary-fixed": "#001946",
+                    "background": "#f8f9fa",
+                    "inverse-primary": "#77da9f",
+                    "surface-tint": "#006d41",
+                    "text-inverse": "#FFFFFF",
+                    "tertiary": "#0056cc",
+                    "surface-container": "#edeeef",
+                    "secondary": "#5b5f63",
+                    "primary-fixed": "#93f7ba",
+                    "primary": "#006c40",
+                    "surface": "#f8f9fa",
+                    "surface-container-highest": "#e1e3e4",
+                    "on-background": "#191c1d",
+                    "outline": "#6e7a70",
+                    "accent-green": "#198754",
+                    "on-secondary-fixed": "#181c20",
+                    "error-container": "#ffdad6",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#5f6368",
+                    "on-primary-fixed-variant": "#00522f",
+                    "tertiary-fixed-dim": "#b1c5ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1200px",
+                    "stack-lg": "2rem",
+                    "section-padding": "5rem",
+                    "stack-sm": "0.5rem",
+                    "stack-md": "1rem",
+                    "gutter": "1.5rem"
+            },
+            "fontFamily": {
+                    "label-caps": ["Montserrat"],
+                    "display-hero-mobile": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "headline-section": ["Montserrat"],
+                    "headline-card": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "label-mono": ["JetBrains Mono"],
+                    "display-hero": ["Montserrat"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "display-hero-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-section": ["28px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-card": ["20px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-mono": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "display-hero": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #bdcabe;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-surface/80 dark:bg-surface-dark/80 backdrop-blur-md fixed top-0 w-full z-50 border-b border-outline-variant/30 dark:border-outline-variant/10">
+<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim" data-icon="terminal">terminal</span>
+<h1 class="font-display-hero-mobile text-display-hero-mobile font-bold text-on-background dark:text-surface-container-lowest">DevPortfolio</h1>
+</div>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary font-label-mono text-label-mono py-1" href="#about">About</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim font-label-mono text-label-mono py-1 transition-colors" href="#education">Education</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim font-label-mono text-label-mono py-1 transition-colors" href="#projects">Projects</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim font-label-mono text-label-mono py-1 transition-colors" href="#tools">Tools</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim font-label-mono text-label-mono py-1 transition-colors" href="#contact">Contact</a>
+<a href="./loisa-amper-resume.pdf" class="bg-primary text-on-primary px-6 py-2 rounded-lg font-bold hover:opacity-90 active:scale-95 transition-all shadow-md" target="_blank">
+                    Hire Me
+                </a>
+</nav>
+<button class="md:hidden p-2 text-on-background">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</header>
+<main class="mt-20">
+<!-- Hero Section -->
+<section class="py-section-padding px-gutter max-w-container-max mx-auto" id="about">
+<div class="flex flex-col md:flex-row gap-12 items-center">
+<div class="w-full md:w-1/2 order-2 md:order-1">
+<span class="inline-flex items-center gap-2 px-3 py-1 bg-primary-fixed text-on-primary-fixed rounded-full text-label-caps font-label-caps mb-4">
+<span class="w-2 h-2 rounded-full bg-accent-green animate-pulse"></span>
+                        AVAILABLE FOR WORK
+                    </span>
+<h2 class="font-display-hero text-display-hero text-on-background mb-6">Building digital experiences with <span class="text-primary">precision</span> and <span class="text-accent-green">purpose</span>.</h2>
+<div class="font-body-lg text-body-lg text-secondary mb-8 leading-relaxed">
+                        {{DATA:DOCUMENT:DOCUMENT_8}}
+                    </div>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-lg font-bold hover:opacity-90 active:scale-95 transition-all shadow-md">
+                            Contact Me
+                        </button>
+<button class="border-2 border-accent-green text-accent-green px-8 py-4 rounded-lg font-bold hover:bg-surface-container transition-all">
+                            View Portfolio
+                        </button>
+</div>
+</div>
+<div class="w-full md:w-1/2 order-1 md:order-2 flex justify-center">
+<div class="relative group">
+<div class="absolute -inset-4 bg-primary-container/10 rounded-full blur-2xl group-hover:bg-primary-container/20 transition-all"></div>
+<img alt="Loi - Profile Picture" class="relative w-full max-w-md h-auto object-contain rounded-2xl transition-all duration-500 shadow-2xl" src="https://lh3.googleusercontent.com/aida/AP1WRLvUMcosrBUjinHwSrwLurv0ZqPHzpoKViyqJoUQdaxo6D9TS9oyozQjFhM_6nsZQwIBxh6OVgbn_IoNkVQZVR2pEcs56fA9nuYE9ijIxhqoMecKCZwZg9l1eN0OgHuDOKJqCrWXBYzXmDy594ycAm0FpZclrV9ikxpVprUBRPkDYBSq1BYwDo4O9Usv-_zKH5q1hI5up_U4dj174LE4XsVjOPTTm6DUQ_QAs7V7vt5Bep9WYqtNjLSGXb8"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Academic Journey -->
+<section class="bg-surface-container-low py-section-padding px-gutter" id="education">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-section text-headline-section text-on-surface mb-2">Academic Journey</h2>
+<div class="h-1.5 w-16 bg-accent-green mx-auto rounded-full"></div>
+</div>
+<div class="relative flex flex-col md:flex-row justify-between gap-8 timeline-container">
+<!-- Timeline Card 1 -->
+<div class="relative z-10 w-full md:w-1/3 bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:border-accent-green transition-colors hover:translate-y-[-4px] duration-300">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+</div>
+<span class="font-label-mono text-label-mono text-accent-green mb-2 block">2019 — 2023</span>
+<h3 class="font-headline-card text-headline-card mb-2">B.S. in Information Technology</h3>
+<p class="text-secondary mb-4">Focus on Enterprise Systems &amp; Software Engineering. Graduated with high honors.</p>
+<div class="pt-4 border-t border-outline-variant/20 flex items-center gap-2 text-on-surface-variant italic text-sm">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                            State University of Science
+                        </div>
+</div>
+<!-- Timeline Card 2 -->
+<div class="relative z-10 w-full md:w-1/3 bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:border-accent-green transition-colors hover:translate-y-[-4px] duration-300">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+</div>
+<span class="font-label-mono text-label-mono text-accent-green mb-2 block">2023 — 2024</span>
+<h3 class="font-headline-card text-headline-card mb-2">Full Stack Bootcamp</h3>
+<p class="text-secondary mb-4">Intensive 6-month specialized program in modern web architecture and cloud deployment.</p>
+<div class="pt-4 border-t border-outline-variant/20 flex items-center gap-2 text-on-surface-variant italic text-sm">
+<span class="material-symbols-outlined text-sm" data-icon="verified">verified</span>
+                            Certification in MERN &amp; AWS
+                        </div>
+</div>
+<!-- Timeline Card 3 -->
+<div class="relative z-10 w-full md:w-1/3 bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 hover:border-accent-green transition-colors hover:translate-y-[-4px] duration-300">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined" data-icon="military_tech">military_tech</span>
+</div>
+<span class="font-label-mono text-label-mono text-accent-green mb-2 block">Present</span>
+<h3 class="font-headline-card text-headline-card mb-2">M.S. in Computer Science</h3>
+<p class="text-secondary mb-4">Specializing in Artificial Intelligence and distributed cloud architectures.</p>
+<div class="pt-4 border-t border-outline-variant/20 flex items-center gap-2 text-on-surface-variant italic text-sm">
+<span class="material-symbols-outlined text-sm" data-icon="history">history</span>
+                            Ongoing / Part-time
+                        </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Projects -->
+<section class="py-section-padding px-gutter max-w-container-max mx-auto" id="projects">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline-section text-headline-section text-on-surface mb-2">Featured Projects</h2>
+<p class="text-secondary">A selection of my best work and technical solutions.</p>
+</div>
+<button class="hidden md:flex items-center gap-2 text-primary font-bold hover:underline">
+                    View Archive
+                    <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project 1 -->
+<article class="group bg-surface rounded-xl overflow-hidden border border-outline-variant/20 hover:border-accent-green/50 transition-all duration-300">
+<div class="relative h-64 overflow-hidden">
+<img alt="E-commerce API Integration" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLsckvIYE_Koe66YoIP6lNEwLHhXBkBWuYvIphp0WAdfo9vFiAe7JQdI70sHGP0P3Uhwgm9LJ8WLq1qgAn7jJJ9WrJhv2xhpZmxAoY34NHOiUMf5NAruJ8m9iiJGpVzPp7kK8HwU7g4wQ_FDcKNEs434K1JYKImwgpoOK7noIxMSfzVx90Em1JHxOLhZdsQbg8dmbK4HP1WzMyayDij-CAOs805tWMLrCZkp4Tf2QDOQ2aaWO3AMIowRgQ"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+<button class="bg-white text-black p-3 rounded-full hover:bg-primary-container hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="link">link</span>
+</button>
+<button class="bg-white text-black p-3 rounded-full hover:bg-primary-container hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+</button>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-card text-headline-card mb-3">API Integration Hub</h3>
+<p class="text-secondary text-sm mb-6 line-clamp-2">Scalable headless commerce middleware connecting frontend storefronts to enterprise inventory engines.</p>
+<div class="flex flex-wrap gap-2">
+<span class="font-label-mono text-[10px] px-2 py-1 bg-surface-container rounded uppercase text-on-surface-variant">Next.js</span>
+<span class="font-label-mono text-[10px] px-2 py-1 bg-surface-container rounded uppercase text-on-surface-variant">Go</span>
+<span class="font-label-mono text-[10px] px-2 py-1 bg-surface-container rounded uppercase text-on-surface-variant">Redis</span>
+</div>
+</div>
+</article>
+<!-- Project 2 -->
+<article class="group bg-surface rounded-xl overflow-hidden border border-outline-variant/20 hover:border-accent-green/50 transition-all duration-300">
+<div class="relative h-64 overflow-hidden">
+<img alt="Developer Booking Platform" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLsa8l28aY1qJj9MThzd-FuB40WhJ9MvUuM_Va6QXef9HkB8AjpAzUhwvHCi94IzJFFNsGmI77VCO8BOCkd-RNzlYfdPrQADt8FS1tJTJeetG01y44oZ1hzbdYEcX7or_8hWNjfEhrwp4u-jvNvBSyZ-BQpJU-9t000OeE9gFASk6ct9V-wjqAriRs2hEllPsQcQ9lBnVfhM0j0gmOBTzDkwdc3OozCv_F3cGdqC0-Ok5472Fratmz6CQQ"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+<button class="bg-white text-black p-3 rounded-full">
+<span class="material-symbols-outlined" data-icon="link">link</span>
+</button>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-card text-headline-card mb-3">Booking Intelligence</h3>
+<p class="text-secondary text-sm mb-6 line-clamp-2">Real-time scheduling algorithm with multi-timezone support for remote engineering teams.</p>
+<div class="flex flex-wrap gap-2">
+<span class="font-label-mono text-[10px] px-2 py-1 bg-surface-container rounded uppercase text-on-surface-variant">React</span>
+<span class="font-label-mono text-[10px] px-2 py-1 bg-surface-container rounded uppercase text-on-surface-variant">Node.js</span>
+<span class="font-label-mono text-[10px] px-2 py-1 bg-surface-container rounded uppercase text-on-surface-variant">MongoDB</span>
+</div>
+</div>
+</article>
+<!-- Project 3 -->
+<article class="group bg-surface rounded-xl overflow-hidden border border-outline-variant/20 hover:border-accent-green/50 transition-all duration-300">
+<div class="relative h-64 overflow-hidden">
+<img alt="School Management System" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLvvD5yR-VM8SWEfcKnn2nVuJJk0Di9Jkl9G-iBLhOteFGBazJ7D2LhHMEptlGQ8mOOsNDFCKyy42P60SpJLB8zSJtR1_ePqf44JOIhsMeqFzpPGQCMPU7nfqagC2g4NusRdPKyheRl9s9zmt8c_6KBSf-lK-ZML3YtnTIIrpgR-H0jdhnk66nFfH8tMCcikr5D9r_iv4l7oLEx5cgVGMd41PE24yUBK1YKEnktV0xf9EcBJkCX0PgUSUC4"/>
+</div>
+<div class="p-6">
+<h3 class="font-headline-card text-headline-card mb-3">EduConnect LMS</h3>
+<p class="text-secondary text-sm mb-6 line-clamp-2">Learning management system designed for synchronous remote classes and resource tracking.</p>
+<div class="flex flex-wrap gap-2">
+<span class="font-label-mono text-[10px] px-2 py-1 bg-surface-container rounded uppercase text-on-surface-variant">Vue.js</span>
+<span class="font-label-mono text-[10px] px-2 py-1 bg-surface-container rounded uppercase text-on-surface-variant">Laravel</span>
+</div>
+</div>
+</article>
+<!-- Project 4 -->
+<article class="group bg-surface rounded-xl overflow-hidden border border-outline-variant/20 hover:border-accent-green/50 transition-all duration-300">
+<div class="relative h-64 overflow-hidden">
+<img alt="Mobile UI Architecture" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLsRgG6vJXDsrr-GoFKOwSZYKWHcFeB4p-yHieSFHuWvhpwqzHXvhK2YFycjty2d8JHac3VWLJn19hSCi28Q8zOxgrx7PqcMgunQF5w5aOld8jlnEWc4qzipKoB8DuHyttLXLEW-Bb-9pb9cKILQOMAw37zWsqHxT9S7wWzm3kSjPN1zBsbEbEWhpPaXRBmv9FxW8QqGXKVL5JVB7D56Uwpo_3t0wA83PZw4ytf31PebARRl8rDVFoHCvTM"/>
+</div>
+<div class="p-6">
+<h3 class="font-headline-card text-headline-card mb-3">FinTech Mobile Framework</h3>
+<p class="text-secondary text-sm mb-6 line-clamp-2">High-performance mobile UI library for banking applications with built-in biometric security.</p>
+<div class="flex flex-wrap gap-2">
+<span class="font-label-mono text-[10px] px-2 py-1 bg-surface-container rounded uppercase text-on-surface-variant">React Native</span>
+<span class="font-label-mono text-[10px] px-2 py-1 bg-surface-container rounded uppercase text-on-surface-variant">Redux</span>
+</div>
+</div>
+</article>
+<!-- Project 5 -->
+<article class="group bg-surface rounded-xl overflow-hidden border border-outline-variant/20 hover:border-accent-green/50 transition-all duration-300">
+<div class="relative h-64 overflow-hidden">
+<img alt="UI Design System" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLvTqzj3e21ArxRrYmVkFLR7obKk50VWiqJVkJgZnZGcVqEu6B1g-im26i47KLVjHxmk2tkdsEVTgLOBa5PMymoVuNuymn7tmFW7QpnvFntKMr9Q1bJ2dkuvI2ZnDp66eV9loLv1E0leIA6e_su6l9xaBRnCN4ghW-SUjGhzNAvoHzJ8vweL41ngN0xlLxulbyENuC752yTGWCTSx6YeA1cqzuUovmeI4oyy02fWonTR7RQdIrEgH8SrWys"/>
+</div>
+<div class="p-6">
+<h3 class="font-headline-card text-headline-card mb-3">NeoDesign Tokens</h3>
+<p class="text-secondary text-sm mb-6 line-clamp-2">A comprehensive design system focusing on accessibility and enterprise-grade scalability.</p>
+<div class="flex flex-wrap gap-2">
+<span class="font-label-mono text-[10px] px-2 py-1 bg-surface-container rounded uppercase text-on-surface-variant">Figma</span>
+<span class="font-label-mono text-[10px] px-2 py-1 bg-surface-container rounded uppercase text-on-surface-variant">Tailwind</span>
+</div>
+</div>
+</article>
+<!-- Project 6 -->
+<article class="group bg-surface rounded-xl overflow-hidden border border-outline-variant/20 hover:border-accent-green/50 transition-all duration-300">
+<div class="relative h-64 overflow-hidden">
+<img alt="Java Enterprise Services" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLvkd4Pj0Xa2PtkKbHVi2-m647hbBaT074Jkvplvdd2TxtLFtH7UHpu1_y8NZdxvexAd59mXcSIiL3X-hkcS7v8k1LW5CQ1z0pktqMz4zrYoE6w8dnYEBgBb8Ltb4q3DzAc3Uz0KP9btVBRJ0g5XUVfrR9aK9ezXOLOJTHzWzCFQaM4Wyx_jZHvfrVuEd9xmAMw8ChdhLY8i-KXLveeq9VKEjsA3J9_pvGF9I0p-9jW9zjyiBD5ajCIC_Kc"/>
+</div>
+<div class="p-6">
+<h3 class="font-headline-card text-headline-card mb-3">Cloud Data Processor</h3>
+<p class="text-secondary text-sm mb-6 line-clamp-2">Microservices architecture for processing high-volume analytical data in cloud environments.</p>
+<div class="flex flex-wrap gap-2">
+<span class="font-label-mono text-[10px] px-2 py-1 bg-surface-container rounded uppercase text-on-surface-variant">Java</span>
+<span class="font-label-mono text-[10px] px-2 py-1 bg-surface-container rounded uppercase text-on-surface-variant">Docker</span>
+<span class="font-label-mono text-[10px] px-2 py-1 bg-surface-container rounded uppercase text-on-surface-variant">K8s</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- Technical Expertise -->
+<section class="bg-surface-dark py-section-padding px-gutter text-white" id="tools">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-section text-headline-section mb-2">Technical Expertise</h2>
+<p class="text-secondary-fixed-dim">Tools and technologies I use to bring ideas to life.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Frontend Stack -->
+<div>
+<h3 class="font-label-caps text-label-caps text-primary-fixed-dim mb-6">Frontend Development</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-colors group">
+<span class="material-symbols-outlined text-secondary-fixed-dim group-hover:text-accent-green" data-icon="html">html</span>
+<span class="font-label-mono text-label-mono">HTML5 / CSS3</span>
+</div>
+<div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-colors group">
+<span class="material-symbols-outlined text-secondary-fixed-dim group-hover:text-accent-green" data-icon="javascript">javascript</span>
+<span class="font-label-mono text-label-mono">JavaScript</span>
+</div>
+<div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-colors group">
+<span class="material-symbols-outlined text-secondary-fixed-dim group-hover:text-accent-green" data-icon="layers">layers</span>
+<span class="font-label-mono text-label-mono">React / Vue</span>
+</div>
+<div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-colors group">
+<span class="material-symbols-outlined text-secondary-fixed-dim group-hover:text-accent-green" data-icon="brush">brush</span>
+<span class="font-label-mono text-label-mono">Tailwind</span>
+</div>
+</div>
+</div>
+<!-- Backend Stack -->
+<div>
+<h3 class="font-label-caps text-label-caps text-primary-fixed-dim mb-6">Backend &amp; Database</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-colors group">
+<span class="material-symbols-outlined text-secondary-fixed-dim group-hover:text-accent-green" data-icon="dns">dns</span>
+<span class="font-label-mono text-label-mono">Node.js / Express</span>
+</div>
+<div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-colors group">
+<span class="material-symbols-outlined text-secondary-fixed-dim group-hover:text-accent-green" data-icon="storage">storage</span>
+<span class="font-label-mono text-label-mono">SQL / NoSQL</span>
+</div>
+<div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-colors group">
+<span class="material-symbols-outlined text-secondary-fixed-dim group-hover:text-accent-green" data-icon="api">api</span>
+<span class="font-label-mono text-label-mono">RESTful APIs</span>
+</div>
+<div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-colors group">
+<span class="material-symbols-outlined text-secondary-fixed-dim group-hover:text-accent-green" data-icon="security">security</span>
+<span class="font-label-mono text-label-mono">Auth Systems</span>
+</div>
+</div>
+</div>
+<!-- DevOps Stack -->
+<div>
+<h3 class="font-label-caps text-label-caps text-primary-fixed-dim mb-6">DevOps &amp; Deployment</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-colors group">
+<span class="material-symbols-outlined text-secondary-fixed-dim group-hover:text-accent-green" data-icon="cloud">cloud</span>
+<span class="font-label-mono text-label-mono">AWS / GCP</span>
+</div>
+<div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-colors group">
+<span class="material-symbols-outlined text-secondary-fixed-dim group-hover:text-accent-green" data-icon="container">contacts</span>
+<span class="font-label-mono text-label-mono">Docker</span>
+</div>
+<div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-colors group">
+<span class="material-symbols-outlined text-secondary-fixed-dim group-hover:text-accent-green" data-icon="git">gif</span>
+<span class="font-label-mono text-label-mono">Git Flow</span>
+</div>
+<div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-colors group">
+<span class="material-symbols-outlined text-secondary-fixed-dim group-hover:text-accent-green" data-icon="speed">speed</span>
+<span class="font-label-mono text-label-mono">CI/CD</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-section-padding px-gutter max-w-container-max mx-auto" id="contact">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+<div>
+<h2 class="font-headline-section text-headline-section text-on-surface mb-6">Let's Connect</h2>
+<p class="text-body-lg text-secondary mb-10">Whether you have a question or just want to say hi, my inbox is always open. I'll get back to you as soon as I can!</p>
+<div class="space-y-6">
+<div class="flex items-center gap-4 group">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Email</h4>
+<p class="text-secondary">contact@devportfolio.com</p>
+</div>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="public">public</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Social</h4>
+<p class="text-secondary">LinkedIn, GitHub, Twitter</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-2xl">
+<form class="space-y-6">
+<div class="grid grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-mono text-label-mono text-on-surface-variant">NAME</label>
+<input class="w-full bg-surface p-4 border border-outline-variant/30 rounded-lg focus:ring-2 focus:ring-accent-green focus:border-transparent outline-none transition-all" placeholder="Your Name" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-mono text-label-mono text-on-surface-variant">EMAIL</label>
+<input class="w-full bg-surface p-4 border border-outline-variant/30 rounded-lg focus:ring-2 focus:ring-accent-green focus:border-transparent outline-none transition-all" placeholder="email@example.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-mono text-label-mono text-on-surface-variant">SUBJECT</label>
+<input class="w-full bg-surface p-4 border border-outline-variant/30 rounded-lg focus:ring-2 focus:ring-accent-green focus:border-transparent outline-none transition-all" placeholder="How can I help?" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-mono text-label-mono text-on-surface-variant">MESSAGE</label>
+<textarea class="w-full bg-surface p-4 border border-outline-variant/30 rounded-lg focus:ring-2 focus:ring-accent-green focus:border-transparent outline-none transition-all resize-none" placeholder="Tell me about your project..." rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-lg font-bold hover:opacity-90 active:scale-95 transition-all shadow-md flex items-center justify-center gap-2" type="submit">
+                            Send Message
+                            <span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-dark w-full mt-stack-lg border-t border-outline-variant dark:border-outline-variant/20">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter py-stack-lg max-w-container-max mx-auto gap-stack-md">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps tracking-widest text-on-secondary-container dark:text-secondary-fixed-dim uppercase">DevPortfolio</span>
+<span class="text-outline">/</span>
+<p class="font-body-md text-body-md text-on-secondary-container dark:text-secondary-fixed-dim">© 2024 Full Stack Developer. All rights reserved.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-accent-green transition-colors font-body-md text-body-md" href="#">LinkedIn</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-accent-green transition-colors font-body-md text-body-md" href="#">GitHub</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-accent-green transition-colors font-body-md text-body-md" href="#">Accessibility</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-accent-green transition-colors font-body-md text-body-md" href="#">Privacy</a>
+</div>
+</div>
+</footer>
+<!-- Scroll to Top FAB -->
+<button class="fixed bottom-8 right-8 bg-primary text-on-primary w-12 h-12 rounded-full shadow-lg opacity-0 translate-y-10 pointer-events-none transition-all duration-300 flex items-center justify-center z-[100] active:scale-90" id="scrollToTop">
+<span class="material-symbols-outlined" data-icon="arrow_upward">arrow_upward</span>
+</button>
+<script>
+        // Scroll To Top Logic
+        const scrollBtn = document.getElementById('scrollToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollBtn.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+            } else {
+                scrollBtn.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+            }
+        });
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('article, section > div').forEach(el => {
+            if (!el.classList.contains('timeline-container')) {
+                el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+                observer.observe(el);
+            }
+        });
+    </script>
+</body></html>
